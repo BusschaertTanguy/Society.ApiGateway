@@ -4,11 +4,11 @@
       "UpstreamPathTemplate": "/citizen/{everything}",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamPathTemplate": "/api/{everything}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5010
+          "Host": "citizen-service",
+          "Port": 80
         }
       ]
     },
@@ -16,16 +16,15 @@
       "UpstreamPathTemplate": "/universe/{everything}",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamPathTemplate": "/api/{everything}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5020
+          "Host": "universe-service",
+          "Port": 80
         }
       ]
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:5000"
   }
 }
