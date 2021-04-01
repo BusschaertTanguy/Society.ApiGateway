@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
-using Ocelot.Provider.Consul;
 
 namespace Society.Gateway
 {
@@ -11,7 +10,7 @@ namespace Society.Gateway
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddOcelot().AddConsul();
+            services.AddOcelot();
             services.AddCors(option => option.AddPolicy("All", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
         }
 

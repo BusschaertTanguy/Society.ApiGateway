@@ -5,21 +5,26 @@
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamPathTemplate": "/api/{everything}",
       "DownstreamScheme": "http",
-      "ServiceName": "citizen-service"
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "citizen-service",
+          "Port": 80
+        }
+      ]
     },
     {
       "UpstreamPathTemplate": "/universe/{everything}",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamPathTemplate": "/api/{everything}",
       "DownstreamScheme": "http",
-      "ServiceName": "universe-service"
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "universe-service",
+          "Port": 80
+        }
+      ]
     }
   ],
   "GlobalConfiguration": {
-    "ServiceDiscoveryProvider": {
-      "Host": "consul",
-      "Port": 8500,
-      "Type": "Consul"
-    }
   }
 }
